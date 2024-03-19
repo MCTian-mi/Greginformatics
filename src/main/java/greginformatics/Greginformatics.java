@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package greginformatics;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -16,7 +16,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Tags.MODID, version = Tags.VERSION, name = Tags.MODNAME, acceptedMinecraftVersions = "[1.12.2]")
-public class MyMod {
+public class Greginformatics {
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MODID);
 
@@ -25,7 +25,7 @@ public class MyMod {
     public void preInit(FMLPreInitializationEvent event) {
         // register to the event bus so that we can listen to events
         MinecraftForge.EVENT_BUS.register(this);
-        LOGGER.info("I am " + Tags.MODNAME + " + at version " + Tags.VERSION);
+        LOGGER.info("Hello from " + Tags.MODNAME + " + at version " + Tags.VERSION);
     }
 
     @SubscribeEvent

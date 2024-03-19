@@ -1,7 +1,7 @@
 [{
     "modid": "${modid}",
     "name": "${modname}",
-    "description": "An example mod for Minecraft 1.12.2 with Forge",
+    "description": "An GregTechCE:u addon for chemistry enthusiasts",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "logoFile": "",

@@ -1,0 +1,15 @@
+# Inorganic compounds
+gregtech.material.salt.smiles=[Na+].[Cl-]
+gregtech.material.phosphorus_pentoxide.smiles=O=P13OP2(=O)OP(=O)(O1)OP(=O)(O2)O3
+
+# Organic compounds
+gregtech.material.sugar.smiles=O1[C@H](CO)[C@@H](O)[C@H](O)[C@@H](O)[C@H]1O[C@@]2(O[C@@H]([C@@H](O)[C@@H]2O)CO)CO
+gregtech.material.dichlorobenzene.smiles=ClC1=CC=C(Cl)C=C1
+gregtech.material.diphenyl_isophthalate.smiles=O=C(OC1=CC=CC=C1)C2=CC(C(OC3=CC=CC=C3)=O)=CC=C2
+gregtech.material.phthalic_acid.smiles=OC(C1=CC=CC=C1C(O)=O)=O
+gregtech.material.dichlorobenzidine.smiles=NC(C(Cl)=C1)=CC=C1C2=CC(Cl)=C(N)C=C2
+gregtech.material.diaminobenzidine.smiles=NC(C(N)=C1)=CC=C1C2=CC(N)=C(N)C=C2
+gregtech.material.nitrochlorobenzene.smiles=O=[N+](C1=CC=CC=C1Cl)[O-]
+gregtech.material.cyclohexanone_oxime.smiles=O/N=C1CCCCC/1
+gregtech.material.caprolactam.smiles=O=C1CCCCCN1
+gregtech.material.biphenyl.smiles=C1(C2=CC=CC=C2)=CC=CC=C1
