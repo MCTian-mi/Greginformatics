@@ -2,7 +2,7 @@ package greginformatics.client.style.background;
 
 public enum BackgroundStyles {
 
-    DEFAULT(0xF0100010, 0xF0100010, 0x505000FF, 0xFF000000),
+    DEFAULT(0xF0100010, 0xF0100010, 0x505000FF, 1344798847),
     JADE(0xF0383838, 0xF0383838, 0xFF242424, 0xFF242424);
 
     // TODO: Add more
