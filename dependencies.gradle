@@ -50,6 +50,8 @@ dependencies {
     implementation rfg.deobf("curse.maven:susycore-846224:5172970")
     // GTFO 1.11.1
     implementation rfg.deobf("curse.maven:gregtech-food-option-477021:5155451")
+    // MUI 2.4.3
+    implementation rfg.deobf("curse.maven:modularui-624243:5153413")
     // HEI 4.25.2
     //implementation rfg.deobf("curse.maven:had-enough-items-557549:5154770") why???
 

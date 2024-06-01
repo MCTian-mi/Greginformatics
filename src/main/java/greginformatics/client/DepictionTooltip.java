@@ -9,7 +9,6 @@ import net.minecraft.util.ResourceLocation;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.depict.DepictionGenerator;
 import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.layout.StructureDiagramGenerator;
 import org.openscience.cdk.smiles.SmilesParser;
 
 import java.awt.*;
@@ -65,16 +64,12 @@ public class DepictionTooltip {
         }
 
         try {
-            StructureDiagramGenerator sdg = new StructureDiagramGenerator();
-            sdg.setMolecule(molecule);
-            sdg.generateCoordinates();
             DepictionGenerator dg = new DepictionGenerator()
                     .withAtomColors(atom -> Color.white)
                     .withBackgroundColor(new Color(0, 0, 0, 0))
                     .withMargin(8)
                     .withZoom(4.0);
             BufferedImage img = dg.depict(molecule).toImg();
-
             this.w = img.getWidth();
             this.h = img.getHeight();
 

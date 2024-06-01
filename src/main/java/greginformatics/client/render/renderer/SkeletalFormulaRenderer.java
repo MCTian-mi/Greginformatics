@@ -2,13 +2,11 @@ package greginformatics.client.render.renderer;
 
 import greginformatics.client.render.RenderUtil;
 import greginformatics.client.style.background.BackgroundStyles;
-import gregtech.api.unification.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.texture.ITextureObject;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
@@ -48,4 +46,8 @@ public class SkeletalFormulaRenderer {
         GlStateManager.enableLighting();
         GlStateManager.popMatrix();
     }
+
+//    public void renderMol(IAtomContainer) {
+//
+//    }
 }
