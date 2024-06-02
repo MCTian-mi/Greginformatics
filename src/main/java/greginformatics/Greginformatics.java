@@ -4,6 +4,8 @@ import mezz.jei.Internal;
 import mezz.jei.gui.GuiEventHandler;
 import mezz.jei.gui.GuiScreenHelper;
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.IReloadableResourceManager;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.common.MinecraftForge;
@@ -27,6 +29,8 @@ public class Greginformatics {
     public static final Logger LOGGER = LogManager.getLogger(Tags.MODID);
 
     public static GuiScreenHelper guiScreenHelper;
+
+    private static final DepictGenerator depictGenerator = new DepictGenerator();
 
     @EventHandler
     // preInit "Run before anything else. Read your config, create blocks, items, etc. (Remove if not needed)
@@ -66,7 +70,8 @@ public class Greginformatics {
 
     @EventHandler
     public void loadComplete(FMLLoadCompleteEvent event) {
-        DepictGenerator.generate();
+        IReloadableResourceManager reloadableResourceManager = (IReloadableResourceManager) Minecraft.getMinecraft().getResourceManager();
+        reloadableResourceManager.registerReloadListener(depictGenerator);
         GuiEventHandler guiEventHandler = ObfuscationReflectionHelper.getPrivateValue(Internal.class, null, "guiEventHandler");
         guiScreenHelper = ObfuscationReflectionHelper.getPrivateValue(GuiEventHandler.class, guiEventHandler, "guiScreenHelper");
     }

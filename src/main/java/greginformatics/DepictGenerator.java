@@ -7,9 +7,14 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.resources.IResource;
 import net.minecraft.client.resources.IResourceManager;
+import net.minecraft.client.resources.IResourceManagerReloadListener;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.resource.IResourceType;
+import net.minecraftforge.client.resource.ISelectiveResourceReloadListener;
+import net.minecraftforge.client.resource.VanillaResourceType;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.jetbrains.annotations.NotNull;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.depict.DepictionGenerator;
 import org.openscience.cdk.interfaces.IAtomContainer;
@@ -23,9 +28,10 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.function.Predicate;
 
 @SideOnly(Side.CLIENT)
-public class DepictGenerator {
+public class DepictGenerator implements ISelectiveResourceReloadListener {
 
     private static final SmilesParser sp = new SmilesParser(new DefaultChemObjectBuilder());
     private static final DepictionGenerator dg = new DepictionGenerator().withAtomColors(atom -> Color.white)
@@ -102,5 +108,12 @@ public class DepictGenerator {
         } catch (Exception ignored) {
         }
         return null;
+    }
+
+    @Override
+    public void onResourceManagerReload(@NotNull IResourceManager resourceManager, Predicate<IResourceType> resourcePredicate) {
+        if (resourcePredicate.test(VanillaResourceType.LANGUAGES)) {
+            generate();
+        }
     }
 }

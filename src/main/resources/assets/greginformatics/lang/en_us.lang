@@ -4,7 +4,7 @@
 #gregtech.material.borax.smiles=[Na+].[Na+].[O-]B1OB2OB([O-])OB(O1)O2.O.O.O.O.O.O.O.O.O.O
 gregtech.material.dinitrogen_tetroxide.smiles=[O-][N+]([N+]([O-])=O)=O
 gregtech.material.ammonium_chloride.smiles=[NH4+].[Cl-]
-gregtech.material.nitrosyl_chloride.smiles=[N#[O+]].[Cl-]
+gregtech.material.nitrosyl_chloride.smiles=N#[O+].[Cl-]
 
 # Organic compounds
 gregtech.material.glyceryl_trinitrate.smiles=O=[N+](OC(CO[N+]([O-])=O)CO[N+]([O-])=O)[O-]
