@@ -8,13 +8,13 @@ import java.util.List;
 
 public class DepictionTooltip {
 
+    private static final int maxWidth = 200;
+    private static final List<String> EMPTY = new ArrayList<>();
     private int width = 16;
     private int height = 16;
-    private static final int maxWidth = 200;
 
-    private static final List<String> EMPTY = new ArrayList<>();
-
-    public DepictionTooltip() {}
+    public DepictionTooltip() {
+    }
 
     public int getWidth() {
         return width;

@@ -8,6 +8,8 @@ import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.resources.IResource;
 import net.minecraft.client.resources.IResourceManager;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.depict.DepictionGenerator;
 import org.openscience.cdk.interfaces.IAtomContainer;
@@ -22,29 +24,30 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Iterator;
 
+@SideOnly(Side.CLIENT)
 public class DepictGenerator {
 
-    public static final HashMap<String, Integer> textureMap = new HashMap<>();
-    public static final HashMap<String, Size> sizeMap = new HashMap<>();
-
     private static final SmilesParser sp = new SmilesParser(new DefaultChemObjectBuilder());
-
     private static final DepictionGenerator dg = new DepictionGenerator().withAtomColors(atom -> Color.white)
             .withBackgroundColor(new Color(0, 0, 0, 0))
             .withMargin(8)
 //            .withParam(StandardGenerator.StrokeRatio.class, 2.0)
             .withZoom(4.0);
-
     private static final Splitter SPLITTER = Splitter.on('=').limit(2);
+    public static HashMap<String, Integer> textureMap;
+    public static HashMap<String, Size> sizeMap;
 
-    public DepictGenerator() {}
+    public DepictGenerator() {
+    }
 
     public static void generate() {
         Greginformatics.LOGGER.info("Generating Depictions");
+        textureMap = new HashMap<>();
+        sizeMap = new HashMap<>();
         IResourceManager resourceManager = Minecraft.getMinecraft().getResourceManager();
         IResource langFile;
         try {
-            langFile = resourceManager.getResource(new ResourceLocation(Tags.MODID , "lang/en_us.lang"));
+            langFile = resourceManager.getResource(new ResourceLocation(Tags.MODID, "lang/en_us.lang"));
         } catch (IOException e) {
             Greginformatics.LOGGER.error("Failed to load lang file!");
 //            e.printStackTrace();
@@ -96,7 +99,8 @@ public class DepictGenerator {
         String SMILES = LocalizationUtils.format(key);
         try {
             return sp.parseSmiles(SMILES);
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
         return null;
     }
 }

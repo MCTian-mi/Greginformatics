@@ -45,7 +45,8 @@ public class EventHandlers {
                 if (clicked instanceof ClickedIngredient<?>) {
                     fluidStack = ((ClickedIngredient<FluidStack>) clicked).getValue();
                 }
-            } catch (Exception ignored) {}
+            } catch (Exception ignored) {
+            }
         } else if (stack.hasCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY, null)) {
             IFluidHandlerItem fluidHandlerItem = stack.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY, null);
             if (fluidHandlerItem != null) {
@@ -68,7 +69,7 @@ public class EventHandlers {
             } else {
                 name = item.getTranslationKey();
             }
-        } else if (fluidStack != null ) {
+        } else if (fluidStack != null) {
             if (fluidStack.getFluid() instanceof GTFluid.GTMaterialFluid materialFluid) {
                 material = materialFluid.getMaterial();
             } else {
@@ -78,7 +79,6 @@ public class EventHandlers {
         if (material != null) {
             name = material.getUnlocalizedName();
         }
-
 
 
         // Final check
