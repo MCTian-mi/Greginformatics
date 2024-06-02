@@ -60,7 +60,7 @@ gregtech.material.cyclohexane.smiles=C1CCCCC1
 gregtech.material.cyclohexanone_oxime.smiles=O/N=C1CCCCC/1
 gregtech.material.caprolactam.smiles=O=C1CCCCCN1
 gregtech.material.butyraldehyde.smiles=CCCC(=O)[H]
-gregtech.material.biphenyl.smiles=C1(C2=CC=CC=C2)=CC=CC=C1r
+gregtech.material.biphenyl.smiles=C1(C2=CC=CC=C2)=CC=CC=C1
 
 # Polymers
 gregtech.material.silicone_rubber.smiles=[*][Si](C)(C)O[*] |Sg:n:1,2,3,4::ht|
