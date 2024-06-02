@@ -21,7 +21,7 @@ import org.apache.logging.log4j.Logger;
         name = Tags.MODNAME,
         clientSideOnly = true,
         acceptedMinecraftVersions = "[1.12.2]",
-        dependencies = "required-after:modularui@[2.4.3,);required-after:jei@[4.15.0,)")
+        dependencies = "required-after:modularui@[2.4.3,);required-after:jei@[4.15.0,);required-after:gregtech")
 public class Greginformatics {
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MODID);
@@ -66,6 +66,7 @@ public class Greginformatics {
 
     @EventHandler
     public void loadComplete(FMLLoadCompleteEvent event) {
+        DepictGenerator.generate();
         GuiEventHandler guiEventHandler = ObfuscationReflectionHelper.getPrivateValue(Internal.class, null, "guiEventHandler");
         guiScreenHelper = ObfuscationReflectionHelper.getPrivateValue(GuiEventHandler.class, guiEventHandler, "guiScreenHelper");
     }
