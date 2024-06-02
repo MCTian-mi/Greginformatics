@@ -5,6 +5,7 @@ import gregtech.api.fluids.GTFluid;
 import gregtech.api.items.materialitem.MetaPrefixItem;
 import gregtech.api.unification.material.Material;
 import gregtech.api.util.Size;
+import gregtech.common.blocks.MaterialItemBlock;
 import mezz.jei.gui.recipes.RecipesGui;
 import mezz.jei.input.ClickedIngredient;
 import net.minecraft.client.Minecraft;
@@ -53,24 +54,38 @@ public class EventHandlers {
             }
         }
         if (stack.isEmpty() && fluidStack == null) return;
+
+        String name = "";
+
+        // GT Material
         Material material = null;
         if (!stack.isEmpty()) {
             Item item = stack.getItem();
             if (item instanceof MetaPrefixItem metaItem) {
                 material = metaItem.getMaterial(stack);
+            } else if (item instanceof MaterialItemBlock materialItemBlock) {
+                material = materialItemBlock.getBlock().getGtMaterial(stack);
+            } else {
+                name = item.getTranslationKey();
             }
         } else if (fluidStack != null ) {
             if (fluidStack.getFluid() instanceof GTFluid.GTMaterialFluid materialFluid) {
                 material = materialFluid.getMaterial();
+            } else {
+                name = fluidStack.getFluid().getUnlocalizedName();
             }
         }
-        if (material == null) return;
-        String name = material.getUnlocalizedName();
-        if (DepictGenerator.textureMap.get(name) == null) {
-            return;
+        if (material != null) {
+            name = material.getUnlocalizedName();
         }
-        Size size = DepictGenerator.sizeMap.get(name);
-        final SkeletalFormulaTooltip tooltip = new SkeletalFormulaTooltip(name, size.getWidth(), size.getHeight());
-        tooltip.render(event.getX(), event.getY());
+
+
+
+        // Final check
+        if (DepictGenerator.textureMap.get(name) != null) {
+            Size size = DepictGenerator.sizeMap.get(name);
+            final SkeletalFormulaTooltip tooltip = new SkeletalFormulaTooltip(name, size.getWidth(), size.getHeight());
+            tooltip.render(event.getX(), event.getY());
+        }
     }
 }

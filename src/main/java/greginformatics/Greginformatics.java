@@ -6,6 +6,7 @@ import mezz.jei.gui.GuiScreenHelper;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -74,5 +75,10 @@ public class Greginformatics {
     @EventHandler
     // register server commands in this event handler (Remove if not needed)
     public void serverStarting(FMLServerStartingEvent event) {
+    }
+
+    @EventHandler
+    public void textureStitch(TextureStitchEvent.Post event) {
+        DepictGenerator.generate();
     }
 }

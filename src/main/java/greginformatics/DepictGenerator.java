@@ -40,11 +40,14 @@ public class DepictGenerator {
     public DepictGenerator() {}
 
     public static void generate() {
+        Greginformatics.LOGGER.info("Generating Depictions");
         IResourceManager resourceManager = Minecraft.getMinecraft().getResourceManager();
         IResource langFile;
         try {
             langFile = resourceManager.getResource(new ResourceLocation(Tags.MODID , "lang/en_us.lang"));
-        } catch (IOException ignored) {
+        } catch (IOException e) {
+            Greginformatics.LOGGER.error("Failed to load lang file!");
+//            e.printStackTrace();
             return;
         }
         BufferedReader br = new BufferedReader(new InputStreamReader(langFile.getInputStream(), StandardCharsets.UTF_8));
@@ -57,6 +60,8 @@ public class DepictGenerator {
 //            String value = x.next();
             IAtomContainer molecule = null;
             String name = null;
+
+
             if (key.endsWith(".smiles")) {
                 molecule = fromSMILES(key);
                 name = key.replace(".smiles", "");
@@ -80,7 +85,10 @@ public class DepictGenerator {
 //                DynamicTexture dynamicTexture = new DynamicTexture(img);
 //                ResourceLocation location = Minecraft.getMinecraft().getTextureManager().getDynamicTextureLocation(name + "_depict", dynamicTexture);
 //                Minecraft.getMinecraft().getTextureManager().bindTexture(location);
-            } catch (Exception ignored) {}
+            } catch (Exception e) {
+                Greginformatics.LOGGER.error("Failed to generate depiction for name: " + name);
+//                e.printStackTrace();
+            }
         });
     }
 
