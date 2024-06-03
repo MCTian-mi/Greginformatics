@@ -7,7 +7,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.resources.IResource;
 import net.minecraft.client.resources.IResourceManager;
-import net.minecraft.client.resources.IResourceManagerReloadListener;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.resource.IResourceType;
 import net.minecraftforge.client.resource.ISelectiveResourceReloadListener;
@@ -18,6 +17,8 @@ import org.jetbrains.annotations.NotNull;
 import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.depict.DepictionGenerator;
 import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.renderer.generators.BasicSceneGenerator;
+import org.openscience.cdk.renderer.generators.standard.StandardGenerator;
 import org.openscience.cdk.smiles.SmilesParser;
 
 import java.awt.*;
@@ -34,22 +35,28 @@ import java.util.function.Predicate;
 public class DepictGenerator implements ISelectiveResourceReloadListener {
 
     private static final SmilesParser sp = new SmilesParser(new DefaultChemObjectBuilder());
-    private static final DepictionGenerator dg = new DepictionGenerator().withAtomColors(atom -> Color.white)
+//    private static final BasicSceneGenerator bsg = new BasicSceneGenerator();
+    private static final DepictionGenerator dg = new DepictionGenerator(new Font("Arial", Font.PLAIN, 16))
+            .withAtomColors(atom -> Color.white)
             .withBackgroundColor(new Color(0, 0, 0, 0))
             .withMargin(8)
+            .withParam(BasicSceneGenerator.BondLength.class, 24.0d)
+            .withParam(StandardGenerator.BondSeparation.class, 0.18d) // This should have been default tbh
+            .withParam(StandardGenerator.PseudoFontStyle.class, Font.PLAIN) // To make custom abbreviations work
 //            .withParam(StandardGenerator.StrokeRatio.class, 2.0)
-            .withZoom(4.0);
+            .withZoom(8.0);
     private static final Splitter SPLITTER = Splitter.on('=').limit(2);
-    public static HashMap<String, Integer> textureMap;
-    public static HashMap<String, Size> sizeMap;
+    public static final HashMap<String, Integer> textureMap = new HashMap<>();
+    public static final HashMap<String, Size> sizeMap = new HashMap<>();
 
     public DepictGenerator() {
     }
 
     public static void generate() {
         Greginformatics.LOGGER.info("Generating Depictions");
-        textureMap = new HashMap<>();
-        sizeMap = new HashMap<>();
+//        Timer timer = new Timer();
+        textureMap.clear();
+        sizeMap.clear();
         IResourceManager resourceManager = Minecraft.getMinecraft().getResourceManager();
         IResource langFile;
         try {
@@ -85,7 +92,7 @@ public class DepictGenerator implements ISelectiveResourceReloadListener {
             }
             try {
                 BufferedImage img = dg.depict(molecule).toImg();
-
+//                String svgString = dg.depict(molecule).toSvgStr();
                 int glTextureId = TextureUtil.glGenTextures();
                 TextureUtil.uploadTextureImageAllocate(glTextureId, img, false, false);
                 textureMap.put(name, glTextureId);
@@ -99,6 +106,7 @@ public class DepictGenerator implements ISelectiveResourceReloadListener {
 //                e.printStackTrace();
             }
         });
+//        Greginformatics.LOGGER.info("Generated Depictions in" + timer. + "s");
     }
 
     private static IAtomContainer fromSMILES(String key) {

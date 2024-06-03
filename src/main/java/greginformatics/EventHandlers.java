@@ -67,7 +67,7 @@ public class EventHandlers {
             } else if (item instanceof MaterialItemBlock materialItemBlock) {
                 material = materialItemBlock.getBlock().getGtMaterial(stack);
             } else {
-                name = item.getTranslationKey();
+                name = stack.getTranslationKey();
             }
         } else if (fluidStack != null) {
             if (fluidStack.getFluid() instanceof GTFluid.GTMaterialFluid materialFluid) {

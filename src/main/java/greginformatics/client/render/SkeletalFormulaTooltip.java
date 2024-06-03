@@ -8,12 +8,12 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 
 public class SkeletalFormulaTooltip extends DepictionTooltip {
 
-    private int textureId;
+    private final int textureId;
 
     public SkeletalFormulaTooltip(String name, int width, int height) {
         super();
         this.textureId = DepictGenerator.textureMap.get(name);
-        this.setSize(width / 10, height / 10);
+        this.setSize(width / 20, height / 20);
     }
 
     @Override
