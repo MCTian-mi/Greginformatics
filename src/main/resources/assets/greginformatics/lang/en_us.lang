@@ -117,7 +117,7 @@ gregtech.material.paracetamol.smiles=O=C(C)NC1=CC=C(O)C=C1
 # GTFO inorganic compounds
 gregtech.material.gtfo_perchloric_acid.smiles=OCl(=O)(=O)=O
 #Needs to be improved
-gregtech.material.gtfo_chloroauric_acid.smiles=[H+].Cl[Au-](Cl)(Cl)Cl
+#gregtech.material.gtfo_chloroauric_acid.smiles=[H+].Cl[Au-](Cl)(Cl)Cl
 
 # Polymers
 #Needs to be improved
