@@ -214,16 +214,19 @@ susy.material.bistriphenylphosphineiminium_chloride.smiles=C1(P(C2=CC=CC=C2)(C3=
 susy.material.triphenylphosphine_oxide.smiles=O=P(C1=CC=CC=C1)(C2=CC=CC=C2)C3=CC=CC=C3
 susy.material.bromobenzene.smiles=BrC1=CC=CC=C1
 susy.material.triethylaluminium.smiles=CC[Al](CC)CC
-susy.material.hydrogen_peroxide.smiles=OO
+susy.material.hydrogen_peroxide.smiles=[H]OO[H]
 susy.material.carbon_tetrabromide.smiles=BrC(Br)(Br)Br
 susy.material.bromomethane.smiles=[H]C([H])([H])Br
+#Needs to be improved
 susy.material.methacrylamide_sulfate.smiles=CC(C(N)=O)=C.O=S(O)(O)=O
 
 # SuSy inorganic compounds
 susy.material.phosgene.smiles=ClC(Cl)=O
 susy.material.potassium_persulfate.smiles=[K+].[O-]S(=O)(=O)OOS(=O)(=O)[O-].[K+]
 susy.material.boric_acid.smiles=OB(O)O
+#Needs to be improved
 susy.material.potassium_tetrafluoroborate.smiles=[K+].F[B-](F)(F)F
+#Needs to be improved
 susy.material.tetrafluoroboric_acid.smiles=[H+].F[B-](F)(F)F
 susy.material.silicon_tetrachloride.smiles=Cl[Si](Cl)(Cl)Cl
 #susy.material.hexachloroiridic_acid.smiles=Hexachloroiridic Acid
@@ -231,7 +234,9 @@ susy.material.silicon_tetrachloride.smiles=Cl[Si](Cl)(Cl)Cl
 #susy.material.dicobalt_octacarbonyl=Dicobalt Octacarbonyl
 susy.material.sulfur_dichloride.smiles=ClSCl
 susy.material.thionyl_chloride.smiles=O=S(Cl)Cl
+#Needs to be improved
 susy.material.diborane.smiles=[H]B1([H])[H]B([H])([H])[H]1
+#Needs to be improved
 susy.material.lithium_tetrafluoroborate.smiles=[Li+].F[B-](F)(F)F
 susy.material.tetramethylammonium_chloride.smiles=C[N+](C)(C)C.[Cl-]
 susy.material.tetramethylammonium_hydroxide.smiles=C[N+](C)(C)C.[OH-]
