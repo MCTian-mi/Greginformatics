@@ -1,4 +1,4 @@
-package greginformatics.client.render;
+package greginformatics.tooltip;
 
 import greginformatics.DepictGenerator;
 import net.minecraft.client.renderer.BufferBuilder;

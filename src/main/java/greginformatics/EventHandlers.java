@@ -1,6 +1,6 @@
 package greginformatics;
 
-import greginformatics.client.render.SkeletalFormulaTooltip;
+import greginformatics.tooltip.SkeletalFormulaTooltip;
 import gregtech.api.fluids.GTFluid;
 import gregtech.api.items.materialitem.MetaPrefixItem;
 import gregtech.api.unification.material.Material;
@@ -30,7 +30,7 @@ import static greginformatics.Greginformatics.guiScreenHelper;
 public class EventHandlers {
 
     @SubscribeEvent
-    public static void onMetaPrefixItemTooltipRednerEvent(@NotNull RenderTooltipEvent.PostText event) {
+    public static void onTooltipRenderEvent(@NotNull RenderTooltipEvent.PostText event) {
         ItemStack stack = event.getStack();
         FluidStack fluidStack = null;
         if (stack.isEmpty()) {

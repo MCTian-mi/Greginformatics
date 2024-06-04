@@ -1,4 +1,4 @@
-package greginformatics.client.render;
+package greginformatics.tooltip;
 
 import com.cleanroommc.modularui.drawable.GuiDraw;
 import net.minecraft.item.ItemStack;
