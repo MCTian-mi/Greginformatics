@@ -5,7 +5,7 @@ Provides information to those who probably already know it.
 ## What is this?
 ![](yippee.gif)
 
-(please ignore the sussy P~4~O~10~ there)
+(please ignore the sussy P<sub>4</sub>O<sub>10</sub> there)
 
 ## Bug?
 
