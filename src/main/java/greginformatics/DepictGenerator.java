@@ -14,11 +14,11 @@ import net.minecraftforge.client.resource.VanillaResourceType;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
-import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.depict.DepictionGenerator;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.renderer.generators.BasicSceneGenerator;
 import org.openscience.cdk.renderer.generators.standard.StandardGenerator;
+import org.openscience.cdk.silent.SilentChemObjectBuilder;
 import org.openscience.cdk.smiles.SmilesParser;
 
 import java.awt.*;
@@ -34,7 +34,7 @@ import java.util.function.Predicate;
 @SideOnly(Side.CLIENT)
 public class DepictGenerator implements ISelectiveResourceReloadListener {
 
-    private static final SmilesParser sp = new SmilesParser(new DefaultChemObjectBuilder());
+    private static final SmilesParser sp = new SmilesParser(SilentChemObjectBuilder.getInstance());
 //    private static final BasicSceneGenerator bsg = new BasicSceneGenerator();
     private static final DepictionGenerator dg = new DepictionGenerator(new Font("Arial", Font.PLAIN, 16))
             .withAtomColors(atom -> Color.white)

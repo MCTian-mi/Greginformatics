@@ -83,6 +83,10 @@ dependencies {
     implementation rfg.deobf("curse.maven:mixin-booter-419286:5079135")
 
     // Cool stuff
-    shadowImplementation 'org.openscience.cdk:cdk-bundle:2.9'
+    shadowImplementation 'org.openscience.cdk:cdk:2.9'
+    shadowImplementation 'org.openscience.cdk:cdk-depict:2.9'
+    shadowImplementation 'org.openscience.cdk:cdk-interfaces:2.9'
+    shadowImplementation 'org.openscience.cdk:cdk-render:2.9'
+    shadowImplementation 'org.openscience.cdk:cdk-smiles:2.9'
     devOnlyNonPublishable(rfg.deobf(project.files("lib/openbabel.jar")))
 }
