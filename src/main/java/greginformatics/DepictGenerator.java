@@ -16,6 +16,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import org.openscience.cdk.depict.DepictionGenerator;
 import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.interfaces.IChemObjectBuilder;
 import org.openscience.cdk.renderer.generators.BasicSceneGenerator;
 import org.openscience.cdk.renderer.generators.standard.StandardGenerator;
 import org.openscience.cdk.silent.SilentChemObjectBuilder;
@@ -34,7 +35,8 @@ import java.util.function.Predicate;
 @SideOnly(Side.CLIENT)
 public class DepictGenerator implements ISelectiveResourceReloadListener {
 
-    private static final SmilesParser sp = new SmilesParser(SilentChemObjectBuilder.getInstance());
+    private static final IChemObjectBuilder builder = SilentChemObjectBuilder.getInstance();
+    private static final SmilesParser sp = new SmilesParser(builder);
 //    private static final BasicSceneGenerator bsg = new BasicSceneGenerator();
     private static final DepictionGenerator dg = new DepictionGenerator(new Font("Arial", Font.PLAIN, 16))
             .withAtomColors(atom -> Color.white)
@@ -45,6 +47,7 @@ public class DepictGenerator implements ISelectiveResourceReloadListener {
             .withParam(StandardGenerator.PseudoFontStyle.class, Font.PLAIN) // To make custom abbreviations work
 //            .withParam(StandardGenerator.StrokeRatio.class, 2.0)
             .withZoom(8.0);
+
     private static final Splitter SPLITTER = Splitter.on('=').limit(2);
     public static final HashMap<String, Integer> textureMap = new HashMap<>();
     public static final HashMap<String, Size> sizeMap = new HashMap<>();
@@ -83,7 +86,6 @@ public class DepictGenerator implements ISelectiveResourceReloadListener {
                 name = key.replace(".smiles", "");
             }
 
-
             // TODO: other formats
 
 
@@ -101,8 +103,7 @@ public class DepictGenerator implements ISelectiveResourceReloadListener {
 //                DynamicTexture dynamicTexture = new DynamicTexture(img);
 //                ResourceLocation location = Minecraft.getMinecraft().getTextureManager().getDynamicTextureLocation(name + "_depict", dynamicTexture);
 //                Minecraft.getMinecraft().getTextureManager().bindTexture(location);
-            } catch (Exception e) {
-                Greginformatics.LOGGER.error("Failed to generate depiction for name: " + name);
+            } catch (Exception ignored) {
 //                e.printStackTrace();
             }
         });
@@ -114,6 +115,7 @@ public class DepictGenerator implements ISelectiveResourceReloadListener {
         try {
             return sp.parseSmiles(SMILES);
         } catch (Exception ignored) {
+            Greginformatics.LOGGER.error("Failed to generate depiction from SMILES for key: " + key);
         }
         return null;
     }

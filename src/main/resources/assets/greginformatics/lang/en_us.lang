@@ -1,3 +1,4 @@
+# GregTech
 # Inorganic compounds
 #gregtech.material.phosphorus_pentoxide.smiles=O=P13OP2(=O)OP(=O)(O1)OP(=O)(O2)O3
 #gregtech.material.borax.smiles=[Na+].[Na+].[O-]B1OB2OB([O-])OB(O1)O2.O.O.O.O.O.O.O.O.O.O
@@ -48,7 +49,8 @@ gregtech.material.dimethyldichlorosilane.smiles=Cl[Si]([Me])([Me])Cl
 gregtech.material.styrene.smiles=C=CC1=CC=CC=C1
 gregtech.material.butadiene.smiles=C=CC=C
 #Needs to be improved
-gregtech.material.dichlorobenzene.smiles=Cl*.Clc1ccccc1 |m:1:4.5|
+#gregtech.material.dichlorobenzene.smiles=Cl*.Clc1ccccc1 |m:1:4.5|
+gregtech.material.dichlorobenzene.smiles=ClC1=CC=C(Cl)C=C1
 gregtech.material.acetic_acid.smiles=CC(O)=O
 gregtech.material.phenol.smiles=OC1=CC=CC=C1
 #Needs to be improved
@@ -81,6 +83,31 @@ gregtech.material.biphenyl.smiles=C1(C2=CC=CC=C2)=CC=CC=C1
 #Needs to be improved
 gregtech.material.polychlorinated_biphenyl.smiles=Cl*.Cl*.c1ccccc1-c1ccccc1 |m:1:4.5,m:3:11.12,Sg:n:0:x:ht,Sg:n:2:y:ht|
 
+# Polymers
+#Needs to be improved
+gregtech.material.silicone_rubber.smiles=C[Si]([Me])([Me])OC |Sg:n:1,2,3,4::ht|
+gregtech.material.raw_rubber.smiles=CC/C=C(C)/CC |Sg:n:1,2,3,4,5::ht|
+gregtech.material.rubber.smiles=CC/C=C(C)/CC |Sg:n:1,2,3,4,5::ht|
+#Needs to be improved
+gregtech.material.raw_styrene_butadiene_rubber.smiles=CCC(C1=CC=CC=C1)CC/C=C/CC |Sg:n:1,2,3,4,5,6,7,8:m:ht,Sg:n:9,10,11,12:n:ht|
+#Needs to be improved
+gregtech.material.styrene_butadiene_rubber.smiles=CCC(C1=CC=CC=C1)CC/C=C/CC |Sg:n:1,2,3,4,5,6,7,8:m:ht,Sg:n:9,10,11,12:n:ht|
+gregtech.material.polyvinyl_acetate.smiles=CC([OAc])CC |Sg:n:1,2,3::ht|
+gregtech.material.polyvinyl_chloride.smiles=CC(Cl)CC |Sg:n:1,2,3::ht|
+gregtech.material.polyphenylene_sulfide.smiles=CSC1=CC=C(C)C=C1 |Sg:n:1,2,3,4,5,7,8::ht|
+gregtech.material.polybenzimidazole.smiles=CC(=C1)C=CC=C1C(=N2)NC(=C3)C2=CC=C3C(=C4)C=CC(N5)=C4N=C5C |Sg:n:1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24::ht|
+gregtech.material.polydimethylsiloxane.smiles=C[Si]([Me])([Me])OC |Sg:n:1,2,3,4::ht|
+gregtech.material.plastic.smiles=CCCC |Sg:n:1,2::ht|
+#Needs to be improved
+gregtech.material.epoxy.smiles=OC(=CC1)C=CC=1C(C)(C)C(=CC2)C=CC=2OCC(O)CO[H] |Sg:n:1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21::ht|
+#Needs to be improved
+gregtech.material.reinforced_epoxy_resin.smiles=OC(=CC1)C=CC=1C(C)(C)C(=CC2)C=CC=2OCC(O)CO[H] |Sg:n:1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21::ht|
+gregtech.material.polycaprolactam.smiles=CCCCCCC(NC)=O |Sg:n:1,2,3,4,5,6,7,9::ht|
+#Needs to be improved
+gregtech.material.polytetrafluoroethylene.smiles=CC(F)(F)C(F)(F)C |Sg:n:1,2,3,4,5,6::ht|
+gregtech.material.polyvinyl_butyral.smiles=CC(O1)CC(CC)OC1CCC |Sg:n:1,2,3,4,5,7,8,9,10,11::ht|
+
+# GTFO
 # GTFO metaitems
 metaitem.vanillylmandelic_acid_dust.smiles=OC1=CC=C(C=C1OC)C(C(O)=O)O
 metaitem.vanilglycolic_acid_dust.smiles=OC1=CC=C(C=C1OC)C(C(O)=O)=O
@@ -119,27 +146,109 @@ gregtech.material.gtfo_perchloric_acid.smiles=OCl(=O)(=O)=O
 #Needs to be improved
 #gregtech.material.gtfo_chloroauric_acid.smiles=[H+].Cl[Au-](Cl)(Cl)Cl
 
-# Polymers
+# SuSy
+# SuSy organic compounds
+susy.material.isobutane.smiles=CC(C)C
+susy.material.isobutylene.smiles=C=C(C)C
+susy.material.n_methyl_two_pyrrolidone.smiles=O=C1N(C)CCC1
+susy.material.two_chloronitrobenzene.smiles=ClC1=CC=CC=C1[N+]([O-])=O
+susy.material.mixed_chloronitrobenzene.smiles=[O-][N+](=O)*.Clc1ccccc1 |m:3:7.8|
 #Needs to be improved
-gregtech.material.silicone_rubber.smiles=C[Si]([Me])([Me])OC |Sg:n:1,2,3,4::ht|
-gregtech.material.raw_rubber.smiles=CC/C=C(C)/CC |Sg:n:1,2,3,4,5::ht|
-gregtech.material.rubber.smiles=CC/C=C(C)/CC |Sg:n:1,2,3,4,5::ht|
+susy.material.xylene.smiles=C*.Cc1ccccc1 |m:1:4.5|
+susy.material.ortho_xylene.smiles=CC1=CC=CC=C1C
+susy.material.meta_xylene.smiles=CC1=CC=CC(C)=C1
+susy.material.para_xylene.smiles=CC1=CC=C(C)C=C1
 #Needs to be improved
-gregtech.material.raw_styrene_butadiene_rubber.smiles=CCC(C1=CC=CC=C1)CC/C=C/CC |Sg:n:1,2,3,4,5,6,7,8:m:ht,Sg:n:9,10,11,12:n:ht|
+susy.material.meta_para_xylene_mixture.smiles=C*.Cc1ccccc1 |m:1:4.5|
+susy.material.dichloroethane.smiles=ClCCCl
+susy.material.isophthalic_acid.smiles=O=C(O)C1=CC=CC(C(O)=O)=C1
+susy.material.dimethylacetamide.smiles=CC(N(C)C)=O
+susy.material.hydroxylamine.smiles=NO
+susy.material.cyclohexanone.smiles=O=C1CCCCC1
+susy.material.diethyl_ether.smiles=CCOCC
+susy.material.one_bromobutane.smiles=CCCCBr
+susy.material.butyllithium.smiles=[Li]CCCC
+susy.material.acetylene.smiles=[H]C#C[H]
+susy.material.formaldehyde.smiles=[H]C([H])=O
+#susy.material.methylamine_mix.smiles=Methylamine Mix
+susy.material.methylamine.smiles=N[Me]
+susy.material.trimethylamine.smiles=CN(C)C
+susy.material.butynediol.smiles=OCC#CCO
+susy.material.butanediol.smiles=OC/C=C\CO
+susy.material.gamma_butyrolactone.smiles=O=C1CCCO1
+susy.material.dichloromethane.smiles=ClC([H])([H])Cl
+susy.material.carbon_tetrachloride.smiles=ClC(Cl)(Cl)Cl
+susy.material.four_chloronitrobenzene.smiles=ClC1=CC=C([N+]([O-])=O)C=C1
+susy.material.four_nitroaniline.smiles=NC1=CC=C([N+]([O-])=O)C=C1
+susy.material.para_phenylenediamine.smiles=NC1=CC=C(N)C=C1
+susy.material.isophthaloyl_chloride.smiles=O=C(Cl)C1=CC=CC(C(Cl)=O)=C1
+susy.material.tnt.smiles=CC1=C([N+]([O-])=O)C=C([N+]([O-])=O)C=C1[N+]([O-])=O
+susy.material.one_two_dichlorobenzene.smiles=ClC1=CC=CC=C1Cl
+susy.material.two_two_dichlorohydrazobenzene.smiles=ClC1=CC=CC=C1NNC2=CC=CC=C2Cl
+susy.material.chlorotrimethylsilane.smiles=[Me][Si]([Me])([Me])Cl
+susy.material.methyldichlorosilane.smiles=Cl[Si]([H])([Me])Cl
+susy.material.methyltrichlorosilane.smiles=Cl[Si](Cl)([Me])Cl
+susy.material.dimethyldichlorosilane.smiles=Cl[Si]([Me])([Me])Cl
+#susy.material.hydrogen_silsesquioxane.smiles=[H][Si]1(O[Si]2([H])O[Si]3([H])O[Si]4([H])O[Si]5([H])O2)O[Si](O5)([H])O[Si](O4)([H])O[Si](O3)([H])O1
+susy.material.methylenedianiline.smiles=NC(C=C1)=CC=C1CC2=CC=C(N)C=C2
+susy.material.methylene_diphenyl_diisocyanate.smiles=[C-]#[N+]C(C=C1)=CC=C1CC2=CC=C([N+]#[C-])C=C2
+susy.material.triethylenediamine.smiles=NCCNCCN
+#susy.material.rayon.smiles=Rayon
+susy.material.sodium_thiosulfate.smiles=[Na+].O=S([O-])([O-])=S.[Na+]
+susy.material.ethylene_oxide.smiles=C1OC1
+susy.material.pentane.smiles=CCCCC
+susy.material.hexane.smiles=CCCCCC
+susy.material.furfural.smiles=O=C([H])C1=CC=CO1
+susy.material.cresol.smiles=C*.Oc1ccccc1 |m:1:4.5|
+susy.material.xylenol.smiles=CC1=C(O)C=CC(C)=C1
+susy.material.creosol.smiles=OC1=C(OC)C=C(C)C=C1
+susy.material.anthracene.smiles=C12=CC=CC=C1C=C3C=CC=CC3=C2
+susy.material.ethanolamine.smiles=NCCO
+susy.material.diethanolamine.smiles=OCCNCCO
+susy.material.triethanolamine.smiles=OCCN(CCO)CCO
+susy.material.triphenylphosphine.smiles=P(C1=CC=CC=C1)(C2=CC=CC=C2)C3=CC=CC=C3
 #Needs to be improved
-gregtech.material.styrene_butadiene_rubber.smiles=CCC(C1=CC=CC=C1)CC/C=C/CC |Sg:n:1,2,3,4,5,6,7,8:m:ht,Sg:n:9,10,11,12:n:ht|
-gregtech.material.polyvinyl_acetate.smiles=CC([OAc])CC |Sg:n:1,2,3::ht|
-gregtech.material.polyvinyl_chloride.smiles=CC(Cl)CC |Sg:n:1,2,3::ht|
-gregtech.material.polyphenylene_sulfide.smiles=CSC1=CC=C(C)C=C1 |Sg:n:1,2,3,4,5,7,8::ht|
-gregtech.material.polybenzimidazole.smiles=CC(=C1)C=CC=C1C(=N2)NC(=C3)C2=CC=C3C(=C4)C=CC(N5)=C4N=C5C |Sg:n:1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24::ht|
-gregtech.material.polydimethylsiloxane.smiles=C[Si]([Me])([Me])OC |Sg:n:1,2,3,4::ht|
-gregtech.material.plastic.smiles=CCCC |Sg:n:1,2::ht|
+susy.material.triphenylphosphine_dichloride.smiles=ClP(C1=CC=CC=C1)(C2=CC=CC=C2)(Cl)C3=CC=CC=C3
 #Needs to be improved
-gregtech.material.epoxy.smiles=OC(=CC1)C=CC=1C(C)(C)C(=CC2)C=CC=2OCC(O)CO[H] |Sg:n:1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21::ht|
-#Needs to be improved
-gregtech.material.reinforced_epoxy_resin.smiles=OC(=CC1)C=CC=1C(C)(C)C(=CC2)C=CC=2OCC(O)CO[H] |Sg:n:1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21::ht|
-gregtech.material.polycaprolactam.smiles=CCCCCCC(NC)=O |Sg:n:1,2,3,4,5,6,7,9::ht|
-#Needs to be improved
-gregtech.material.polytetrafluoroethylene.smiles=CC(F)(F)C(F)(F)C |Sg:n:1,2,3,4,5,6::ht|
-gregtech.material.polyvinyl_butyral.smiles=CC(O1)CC(CC)OC1CCC |Sg:n:1,2,3,4,5,7,8,9,10,11::ht|
+susy.material.bistriphenylphosphineiminium_chloride.smiles=C1(P(C2=CC=CC=C2)(C3=CC=CC=C3)=[N+]=P(C4=CC=CC=C4)(C5=CC=CC=C5)C6=CC=CC=C6)=CC=CC=C1.[Cl-]
+susy.material.triphenylphosphine_oxide.smiles=O=P(C1=CC=CC=C1)(C2=CC=CC=C2)C3=CC=CC=C3
+susy.material.bromobenzene.smiles=BrC1=CC=CC=C1
+susy.material.triethylaluminium.smiles=CC[Al](CC)CC
+susy.material.hydrogen_peroxide.smiles=OO
+susy.material.carbon_tetrabromide.smiles=BrC(Br)(Br)Br
+susy.material.bromomethane.smiles=[H]C([H])([H])Br
+susy.material.methacrylamide_sulfate.smiles=CC(C(N)=O)=C.O=S(O)(O)=O
 
+# SuSy inorganic compounds
+susy.material.phosgene.smiles=ClC(Cl)=O
+susy.material.potassium_persulfate.smiles=[K+].[O-]S(=O)(=O)OOS(=O)(=O)[O-].[K+]
+susy.material.boric_acid.smiles=OB(O)O
+susy.material.potassium_tetrafluoroborate.smiles=[K+].F[B-](F)(F)F
+susy.material.tetrafluoroboric_acid.smiles=[H+].F[B-](F)(F)F
+susy.material.silicon_tetrachloride.smiles=Cl[Si](Cl)(Cl)Cl
+#susy.material.hexachloroiridic_acid.smiles=Hexachloroiridic Acid
+#susy.material.sodium_dichromate=Sodium Dichromate
+#susy.material.dicobalt_octacarbonyl=Dicobalt Octacarbonyl
+susy.material.sulfur_dichloride.smiles=ClSCl
+susy.material.thionyl_chloride.smiles=O=S(Cl)Cl
+susy.material.diborane.smiles=[H]B1([H])[H]B([H])([H])[H]1
+susy.material.lithium_tetrafluoroborate.smiles=[Li+].F[B-](F)(F)F
+susy.material.tetramethylammonium_chloride.smiles=C[N+](C)(C)C.[Cl-]
+susy.material.tetramethylammonium_hydroxide.smiles=C[N+](C)(C)C.[OH-]
+#susy.material.phosphine.smiles=Phosphine
+susy.material.potassium_hypophosphite.smiles=[K+].O=P([H])([H])[O-]
+susy.material.sodium_hypophosphite.smiles=[Na+].O=P([H])([H])[O-]
+susy.material.dipotassium_phosphate.smiles=[K+].O=P([O-])(O)[O-].[K+]
+susy.material.disodium_phosphate.smiles=[Na+].O=P([O-])(O)[O-].[Na+]
+susy.material.phosphoryl_chloride.smiles=O=P(Cl)(Cl)Cl
+#Needs to be improved
+susy.material.phosphorus_pentachloride.smiles=ClP(Cl)(Cl)(Cl)Cl
+
+# SuSy polymers
+#Needs to be improved
+susy.material.polystyrene.smiles=CCC(c1ccccc1)C |Sg:n:1,2,3,4,5,6,7,8::ht|
+susy.material.cellulose.smiles=O[C@@H]1[C@@H](O)[C@H](O[C@H]2[C@H](O)[C@@H](O)[C@H](O)[C@@H](CO)O2)[C@](CO)(C)O[C@H]1O[H] |Sg:n:0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20,21,22,23,24,25,26,27,28,29,30,21,32::ht|
+susy.material.pmma.smiles=CCC(C)(C)C(=O)OC |Sg:n:1,2,4,5,6,7,8::ht|
+susy.material.polypropylene.smiles=CCC(C)C |Sg:n:1,2,4::ht|
+#susy.material.alkali_cellulose.smiles==Alkali Cellulose
+#susy.material.sodium_cellulose_xanthate.smiles==Sodium Cellulose Xanthate
