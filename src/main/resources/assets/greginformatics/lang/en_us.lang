@@ -199,7 +199,7 @@ susy.material.ethylene_oxide.smiles=C1OC1
 susy.material.pentane.smiles=CCCCC
 susy.material.hexane.smiles=CCCCCC
 susy.material.furfural.smiles=O=C([H])C1=CC=CO1
-susy.material.cresol.smiles=C*.Oc1ccccc1 |m:1:4.5|
+susy.material.cresol.smiles=O*.Cc1ccccc1 |m:1:4.5|
 susy.material.xylenol.smiles=CC1=C(O)C=CC(C)=C1
 susy.material.creosol.smiles=OC1=C(OC)C=C(C)C=C1
 susy.material.anthracene.smiles=C12=CC=CC=C1C=C3C=CC=CC3=C2
