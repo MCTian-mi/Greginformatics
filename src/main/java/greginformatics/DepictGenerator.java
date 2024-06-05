@@ -35,9 +35,11 @@ import java.util.function.Predicate;
 @SideOnly(Side.CLIENT)
 public class DepictGenerator implements ISelectiveResourceReloadListener {
 
+    public static final HashMap<String, Integer> textureMap = new HashMap<>();
+    public static final HashMap<String, Size> sizeMap = new HashMap<>();
     private static final IChemObjectBuilder builder = SilentChemObjectBuilder.getInstance();
     private static final SmilesParser sp = new SmilesParser(builder);
-//    private static final BasicSceneGenerator bsg = new BasicSceneGenerator();
+    //    private static final BasicSceneGenerator bsg = new BasicSceneGenerator();
     private static final DepictionGenerator dg = new DepictionGenerator(new Font("Arial", Font.PLAIN, 16))
             .withAtomColors(atom -> Color.white)
             .withBackgroundColor(new Color(0, 0, 0, 0))
@@ -47,10 +49,7 @@ public class DepictGenerator implements ISelectiveResourceReloadListener {
             .withParam(StandardGenerator.PseudoFontStyle.class, Font.PLAIN) // To make custom abbreviations work
 //            .withParam(StandardGenerator.StrokeRatio.class, 2.0)
             .withZoom(8.0);
-
     private static final Splitter SPLITTER = Splitter.on('=').limit(2);
-    public static final HashMap<String, Integer> textureMap = new HashMap<>();
-    public static final HashMap<String, Size> sizeMap = new HashMap<>();
 
     public DepictGenerator() {
     }

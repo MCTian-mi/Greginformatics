@@ -27,10 +27,8 @@ import org.apache.logging.log4j.Logger;
 public class Greginformatics {
 
     public static final Logger LOGGER = LogManager.getLogger(Tags.MODID);
-
-    public static GuiScreenHelper guiScreenHelper;
-
     private static final DepictGenerator depictGenerator = new DepictGenerator();
+    public static GuiScreenHelper guiScreenHelper;
 
     @EventHandler
     // preInit "Run before anything else. Read your config, create blocks, items, etc. (Remove if not needed)
